@@ -238,7 +238,7 @@
               <div class="card info-card revenue-card">
 
                 <div class="filter">
-                  {% endif %}        
+           {% endif %}        
                   
                     
 
@@ -684,119 +684,149 @@
             </div>
           </div><!-- End Recent Activity -->
 
-          <main id="main" class="main">
+          <!-- Budget Report -->
+          <div class="card">
+            <div class="filter">
+              
+              </ul>
+            </div>
 
-            <div class="pagetitle">
-              <h1>Profile</h1>
-              <nav>
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="portfolio">Dashboard</a></li>
-                  <li class="breadcrumb-item">Profile</li>
-                  
-                </ol>
-              </nav>
-            </div><!-- End Page Title -->
-        
-            <section class="section profile">
-              <div class="row">
-                <div class="col-xl-4">
-        
-                  <div class="card">
-                    <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-        
-                      <img src="" alt="Profile" class="rounded-circle">
-                      <h2>Neojagz</h2>
-                      <h3>Web Designer</h3>
-                      <div class="social-links mt-2">
-                        
-                      </div>
-                    </div>
-                  </div>
-        
-                </div>
-        
-                <div class="col-xl-8">
-        
-                  <div class="card">
-                    <div class="card-body pt-3">
-                      <!-- Bordered Tabs -->
-                      <ul class="nav nav-tabs nav-tabs-bordered">
-        
-                        <li class="nav-item">
-                          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
-                        </li>
-        
-                        <li class="nav-item">
-                          
-                        </li>
-        
-                        <li class="nav-item">
-                          
-                        </li>
-        
-                        <li class="nav-item">
-                          
-                        </li>
-        
-                      </ul>
-                      <div class="tab-content pt-2">
-        
-                        <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                          
-        
-                          <h5 class="card-title">Profile Details</h5>
-                          
-                          <div class="row">
-                            <div class="col-lg-3 col-md-4 label ">First Name</div>
-                            <div class="col-lg-9 col-md-8">Ikponmwosa</div>
-                          </div>
-        
-                          <div class="row">
-                            <div class="col-lg-3 col-md-4 label">Last Name</div>
-                            <div class="col-lg-9 col-md-8">Enabulele</div>
-                          </div>
-        
-                          <div class="row">
-                            <div class="col-lg-3 col-md-4 label">City</div>
-                            <div class="col-lg-9 col-md-8">Lagos</div>
-                          </div>
-        
-                          <div class="row">
-                            <div class="col-lg-3 col-md-4 label">Country</div>
-                            <div class="col-lg-9 col-md-8">Nigeria</div>
-                          </div>
-        
-                          <div class="row">
-                            <div class="col-lg-3 col-md-4 label">State</div>
-                            <div class="col-lg-9 col-md-8">Lagos</div>
-                          </div>
-        
-                          <div class="row">
-                            <div class="col-lg-3 col-md-4 label">Address</div>
-                            <div class="col-lg-9 col-md-8">Lagos</div>
-                          </div>
-        
-                          <div class="row">
-                            <div class="col-lg-3 col-md-4 label">Phone</div>
-                            <div class="col-lg-9 col-md-8">(436) 486-3538 x29071</div>
-                          </div>
-        
-                          <div class="row">
-                            <div class="col-lg-3 col-md-4 label">Email</div>
-                            <div class="col-lg-9 col-md-8">jags@gmail.com</div>
-                          </div>
-        
-                          <div class="row">
-                            <div class="col-lg-3 col-md-4 label">Zip Code</div>
-                            <div class="col-lg-9 col-md-8">234</div>
-                          </div>
-        
-                        </div>
-                        
-        
-                        <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+            <div class="card-body pb-0">
+              <h5 class="card-title">Income Report <span>| This Month</span></h5>
 
-         
+              <div id="budgetChart" style="min-height: 400px;" class="echart"></div>
+
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  var budgetChart = echarts.init(document.querySelector("#budgetChart")).setOption({
+                    legend: {
+                      data: ['Allocated Budget', 'Actual Spending']
+                    },
+                    radar: {
+                      // shape: 'circle',
+                      indicator: [{
+                          name: 'Stocks',
+                          max: 6500
+                        },
+                        {
+                          name: 'Offshore Investments',
+                          max: 16000
+                        },
+                        {
+                          name: 'Salaries',
+                          max: 30000
+                        },
+                        {
+                          name: 'Allowances',
+                          max: 38000
+                        },
+                        {
+                          name: 'Rent',
+                          max: 52000
+                        },
+                        {
+                          name: 'Fees',
+                          max: 25000
+                        }
+                      ]
+                    },
+                    series: [{
+                      name: 'Budget vs spending',
+                      type: 'radar',
+                      data: [{
+                          value: [4200, 3000, 20000, 35000, 50000, 18000],
+                          name: 'Allocated Budget'
+                        },
+                        {
+                          value: [5000, 14000, 28000, 26000, 42000, 21000],
+                          name: 'Actual Spending'
+                        }
+                      ]
+                    }]
+                  });
+                });
+              </script>
+
+            </div>
+          </div><!-- End Budget Report -->
+
+          <!-- Website Traffic -->
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body pb-0">
+              <h5 class="card-title">Website Traffic <span>| Today</span></h5>
+
+              <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
+
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  echarts.init(document.querySelector("#trafficChart")).setOption({
+                    tooltip: {
+                      trigger: 'item'
+                    },
+                    legend: {
+                      top: '5%',
+                      left: 'center'
+                    },
+                    series: [{
+                      name: 'Access From',
+                      type: 'pie',
+                      radius: ['40%', '70%'],
+                      avoidLabelOverlap: false,
+                      label: {
+                        show: false,
+                        position: 'center'
+                      },
+                      emphasis: {
+                        label: {
+                          show: true,
+                          fontSize: '18',
+                          fontWeight: 'bold'
+                        }
+                      },
+                      labelLine: {
+                        show: false
+                      },
+                      data: [{
+                          value: 1048,
+                          name: 'Search Engine'
+                        },
+                        {
+                          value: 735,
+                          name: 'Direct'
+                        },
+                        {
+                          value: 580,
+                          name: 'Email'
+                        },
+                        {
+                          value: 484,
+                          name: 'Union Ads'
+                        },
+                        {
+                          value: 300,
+                          name: 'Video Ads'
+                        }
+                      ]
+                    }]
+                  });
+                });
+              </script>
+
+            </div>
+          </div><!-- End Website Traffic -->
   
           
 
