@@ -28,5 +28,13 @@ class Data(models.Model):
     newstate = models.TextField(null=True, blank=True)
 
 
+    def __str__(self):
+        return self.first_name 
+
+
+class Portfolio(models.Model):
+    
+    ben_name = models.CharField(max_length=200)
+    account_number = models.CharField(max_length=200)  
 
 

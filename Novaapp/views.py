@@ -7,9 +7,15 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Data
 from django.contrib.auth.mixins import LoginRequiredMixin
+<<<<<<< HEAD
 from django.views.decorators.csrf import csrf_exempt
 import webbrowser
 from urllib.request import urlopen
+=======
+from Novaapp.forms import PortfolioForm
+from Novaapp.models import Portfolio
+from django.views.generic import TemplateView, ListView, CreateView,  UpdateView, DetailView
+>>>>>>> d07eefa58bfced8ceeb614fa54ca41c557f6116a
 
 # Create your views here.
 def home(request):
@@ -69,6 +75,7 @@ def logout(request):
     return redirect('loginss')
 
 
+<<<<<<< HEAD
 # the csrf exempt doesn't pose a threat as far as you've set the CORS_ALLOW_ORIGIN variable in settings.py
 @csrf_exempt
 def account(request):
@@ -81,3 +88,39 @@ def account(request):
 
 def realAccount(request):
     return render(request, "account.html")
+=======
+class personal_info(LoginRequiredMixin, CreateView):
+    login_url = '/signin/'
+    form_class = PortfolioForm
+    model = Portfolio
+    context_name = "form"
+    template_name = 'personal.html'
+
+    def form_valid(self, form):
+        obj = form.save(commit=True)
+        obj.username = self.request.user
+        obj.save()
+        return redirect('account.html')
+
+class UpdatePersonal_info(LoginRequiredMixin, UpdateView):
+    login_url = '/signin/'
+    form_class = PortfolioForm
+    model = Portfolio
+    context_name = "form"
+    template_name = 'personal.html'
+
+    def form_valid(self, form):
+        obj = form.save(commit=False)
+        obj.username = self.request.user
+        obj.save()
+        return redirect('account.html')
+
+def account(request):
+    return render(request, 'account.html')
+
+
+
+
+
+
+>>>>>>> d07eefa58bfced8ceeb614fa54ca41c557f6116a
