@@ -19,6 +19,9 @@ urlpatterns = [
     path('transfer', views.transfer, name = 'transfer'),
     path('history', views.history, name = 'history'),
     path('loginss', views.loginss, name = 'loginss'),
-     path('account', views.account, name = 'account'),
+    path('personal', views.personal_info.as_view(), name="personal"),
+    path('account', views.account, name = 'account'),
+    
+   
 
 ]

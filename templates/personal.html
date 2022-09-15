@@ -1,4 +1,6 @@
+
 {% load static %}
+{% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -219,14 +221,18 @@
                 <p>Please complete this transfer form as accuratle as possible and endeavour that the beneficiary account intended is correctly typed</p>
   
                 <!-- Browser Default Validation -->
+                <form action="account" method="POST" enctype="multipart/form-data"></form>
+                {% csrf_token %}
+               
+                
                 <form class="row g-3">
                   <div class="col-md-4">
                     <label for="validationDefault01" class="form-label">Beneficiary name</label>
-                    <input type="text" class="form-control" id="validationDefault01" value="" required>
+                    <input type="text" class="form-control" name = 'ben_name' id="validationDefault01" value="" required>
                   </div>
                   <div class="col-md-4">
                     <label for="validationDefault02" class="form-label">Bank name</label>
-                    <input type="text" class="form-control" id="validationDefault02" value="" required>
+                    <input type="text" class="form-control" name = 'account_number' id="validationDefault02" value="" required>
                   </div>
                   <div class="col-md-4">
                     <label for="validationDefaultUsername" class="form-label">Branch Name</label>
@@ -279,7 +285,7 @@
                     </div>
                   </div>
                   <div class="col-12">
-                    <button class="btn btn-primary" type="submit">Submit </button>
+                    <input type="Submit" value="submit">
                   </div>
                 </form>
                 <!-- End Browser Default Validation -->
@@ -318,3 +324,5 @@
 </body>
 
 </html>
+
+{% endblock %}

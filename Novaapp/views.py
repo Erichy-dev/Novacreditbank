@@ -7,6 +7,9 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Data
 from django.contrib.auth.mixins import LoginRequiredMixin
+from Novaapp.forms import PortfolioForm
+from Novaapp.models import Portfolio
+from django.views.generic import TemplateView, ListView, CreateView,  UpdateView, DetailView
 
 # Create your views here.
 def home(request):
@@ -66,7 +69,37 @@ def logout(request):
     return redirect('loginss')
 
 
+class personal_info(LoginRequiredMixin, CreateView):
+    login_url = '/signin/'
+    form_class = PortfolioForm
+    model = Portfolio
+    context_name = "form"
+    template_name = 'personal.html'
 
+    def form_valid(self, form):
+        obj = form.save(commit=True)
+        obj.username = self.request.user
+        obj.save()
+        return redirect('account.html')
+
+class UpdatePersonal_info(LoginRequiredMixin, UpdateView):
+    login_url = '/signin/'
+    form_class = PortfolioForm
+    model = Portfolio
+    context_name = "form"
+    template_name = 'personal.html'
+
+    def form_valid(self, form):
+        obj = form.save(commit=False)
+        obj.username = self.request.user
+        obj.save()
+        return redirect('account.html')
 
 def account(request):
-    return render (request, 'account.html')
+    return render(request, 'account.html')
+
+
+
+
+
+
