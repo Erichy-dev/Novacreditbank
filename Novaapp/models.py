@@ -5,14 +5,10 @@ from django.db import models
 class Data(models.Model):
     name = models.CharField(max_length=100)
     body = models.CharField(max_length=1000000)
-
-  
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)  
     other_name = models.CharField(max_length=200)
     email = models.EmailField()
-   
-    
     profile_image = models.ImageField(blank=True)
     city = models.CharField(max_length= 100)
     title = models.TextField(null=True, blank=True)
@@ -30,5 +26,7 @@ class Data(models.Model):
     third_history = models.TextField(null=True, blank=True)
     last_history = models.TextField(null=True, blank=True)
     newstate = models.TextField(null=True, blank=True)
+
+
 
 

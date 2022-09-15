@@ -6,6 +6,7 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Data
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 def home(request):
@@ -60,11 +61,12 @@ def loginss(request):
                 return redirect('loginss')
         return render(request, 'loginss.html')
 
-def account(request):
-    return render (request, 'account.html')
-
-
-
 def logout(request):
     auth.logout(request)
     return redirect('loginss')
+
+
+
+
+def account(request):
+    return render (request, 'account.html')
