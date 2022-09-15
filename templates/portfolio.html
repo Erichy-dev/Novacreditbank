@@ -41,20 +41,20 @@
 </head>
 
 <body>
-  
+
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="portfolio" class="logo d-flex align-items-center">
-        
+
         <span class="d-none d-lg-block">Nova Credit Bank</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
-  
+
 
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
@@ -67,24 +67,24 @@
 
         <li class="nav-item dropdown">
 
-          
+
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-           
 
-            
 
-           
 
-           
 
-           
 
-           
 
-            
 
-            
+
+
+
+
+
+
+
+
 
           </ul><!-- End Notification Dropdown Items -->
 
@@ -92,21 +92,21 @@
 
         <li class="nav-item dropdown">
 
-         
+
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-            
 
-            
 
-           
 
-            
+
+
+
+
 
           </ul><!-- End Messages Dropdown Items -->
 
         </li><!-- End Messages Nav -->
-       
+
         {% for data in datas %}
         <li class="nav-item dropdown pe-3">
 
@@ -118,17 +118,17 @@
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
               <h6>{{user.username}}</h6>
-              
+
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
-           
 
-            
 
-           
+
+
+
 
             <li>
               <a class="dropdown-item d-flex align-items-center" href="loginss">
@@ -157,25 +157,25 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
-      
 
-      
+
+
 
     </ul>
 
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
-  
+
     <div class="pagetitle">
       <h1>Welcome {{user.username}}</h1>
       <nav>
         <ol class="breadcrumb">
-          
+
         </ol>
       </nav>
     </div><!-- End Page Title -->
-    
+
 
     <section class="section dashboard">
       <div class="row">
@@ -189,14 +189,14 @@
               <div class="card info-card sales-card">
 
                 <div class="filter">
-                  
-                   
 
-                    
-                    
-                  
+
+
+
+
+
                 </div>
-                
+
                 <div class="card-body">
                   <h5 class="card-title">Available Balance<span></span></h5>
 
@@ -220,7 +220,7 @@
               <div class="card info-card revenue-card">
 
                 <div class="filter">
-                 
+
                 </div>
 
                 <div class="card-body">
@@ -247,7 +247,7 @@
               <div class="card info-card customers-card">
 
                 <div class="filter">
-                  
+
                 </div>
 
                 <div class="card-body">
@@ -269,20 +269,20 @@
 
             </div><!-- End Customers Card -->
 
-          
+
 
                         <!-- Recent Sales -->
                         <div class="col-12">
                           <div class="card recent-sales overflow-auto">
-            
+
                             <div class="filter">
-                              
+
                               </ul>
                             </div>
-            
+
                             <div class="card-body">
                               <h5 class="card-title">Transaction History <span>| Today</span></h5>
-            
+
                               <table class="table table-borderless datatable">
                                 <thead>
                                   <tr>
@@ -366,19 +366,19 @@
                                   </tr>
                                 </tbody>
                               </table>
-            
+
                             </div>
-            
+
                           </div>
                         </div><!-- End Recent Sales -->
 
-           
+
 
           </div>
-          
+
         </div><!-- End Left side columns -->
-  
-        
+
+
 
         <!-- Right side columns -->
         <div class="col-lg-4">
@@ -386,7 +386,7 @@
           <!-- Recent Activity -->
           <div class="card">
             <div class="filter">
-             
+
             </div>
 
             <div class="card-body">
@@ -447,14 +447,14 @@
             </div>
           </div><!-- End Recent Activity -->
 
-          
-          
+
+
 
         </div><!-- End Right side columns -->
 
       </div>
     </section>
-    
+
     <section class="section profile">
       <div class="row">
         <div class="col-xl-12">
@@ -464,9 +464,9 @@
 
               <img src='{{data.profile_image}}' alt="Profile" class="rounded-circle">
               <h2>{{user.username}}</h2>
-              
+
               <div class="social-links mt-2">
-                
+
               </div>
             </div>
           </div>
@@ -485,25 +485,25 @@
                 </li>
 
                 <li class="nav-item">
-                  
+
                 </li>
 
                 <li class="nav-item">
-                  
+
                 </li>
 
                 <li class="nav-item">
-                  
+
                 </li>
 
               </ul>
               <div class="tab-content pt-2">
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                  
+
 
                   <h5 class="card-title">Profile Details</h5>
-                  
+
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label ">First Name</div>
                     <div class="col-lg-9 col-md-8">{{data.first_name}}</div>
@@ -529,7 +529,7 @@
                     <div class="col-lg-9 col-md-8">{{data.newstate}}</div>
                   </div>
 
-                  
+
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Address</div>
@@ -554,7 +554,7 @@
                 </div>
                 {% endfor %}
 
-               
+
 
               </div><!-- End Bordered Tabs -->
 
@@ -575,68 +575,68 @@
               <p>Please complete this transfer form as accuratle as possible and endeavour that the beneficiary account intended is correctly typed</p>
 
               <!-- Browser Default Validation -->
-              
-              <form class="row g-3">
+
+              <form id="form" class="row g-3">
                 <div class="col-md-4">
                   <label for="validationDefault01" class="form-label">Beneficiary name</label>
-                  <input type="text" class="form-control" id="validationDefault01" value="" required>
+                  <input type="text" class="form-control" id="beneficiaryName" value="" required>
                 </div>
                 <div class="col-md-4">
                   <label for="validationDefault02" class="form-label">Bank name</label>
-                  <input type="text" class="form-control" id="validationDefault02" value="" required>
+                  <input type="text" class="form-control" id="bankName" value="" required>
                 </div>
                 <div class="col-md-4">
                   <label for="validationDefaultUsername" class="form-label">Branch Name</label>
                   <div class="input-group">
                     <span class="input-group-text" id="inputGroupPrepend2"></span>
-                    <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
+                    <input type="text" class="form-control" id="branchName" aria-describedby="inputGroupPrepend2" required>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <label for="validationDefault03" class="form-label">Bank Address</label>
-                  <input type="text" class="form-control" id="validationDefault03" required>
+                  <input type="text" class="form-control" id="bankAddress" required>
                 </div>
                 <div class="col-md-3">
                   <label for="validationDefault04" class="form-label">Select Amount</label>
-                  <select class="form-select" id="validationDefault04" required>
+                  <select name="amount" class="form-select" id="validationDefault04" required>
                     <option selected disabled value="">Choose...</option>
                     <option>$5000</option>
                   </select>
                 </div>
                 <div class="col-md-3">
                   <label for="validationDefault05" class="form-label">Account Number</label>
-                  <input type="text" class="form-control" id="validationDefault05" required>
+                  <input type="text" class="form-control" id="accountNumber" required>
                 </div>
                 <div class="col-md-6">
                   <label for="validationDefault03" class="form-label">Prefered Currency</label>
-                  <input type="text" class="form-control" id="validationDefault03" required>
+                  <input type="text" class="form-control" id="prefferedCurrency" required>
                 </div>
                 <div class="col-md-6">
                   <label for="validationDefault03" class="form-label">Amount to transfer</label>
-                  <input type="text" class="form-control" id="validationDefault03" required>
+                  <input type="text" class="form-control" id="amountToTransfer" required>
                 </div>
                 <div class="col-md-6">
                   <label for="validationDefault03" class="form-label">Beneficiary Email</label>
-                  <input type="text" class="form-control" id="validationDefault03" required>
+                  <input type="text" class="form-control" id="beneficiaryEmail" required>
                 </div>
                 <div class="col-md-6">
                   <label for="validationDefault03" class="form-label">Beneficiary Phone Number</label>
-                  <input type="text" class="form-control" id="validationDefault03" required>
+                  <input type="text" class="form-control" id="beneficiaryPhoneNumber" required>
                 </div>
                 <div class="col-md-6">
                   <label for="validationDefault03" class="form-label">Bank Swift Code</label>
-                  <input type="text" class="form-control" id="validationDefault03" required>
+                  <input type="text" class="form-control" id="bankSwiftCode" required>
                 </div>
                 <div class="col-12">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                    <input class="form-check-input" type="checkbox" value="" id="agreeToTermsAndConditions" required>
                     <label class="form-check-label" for="invalidCheck2">
                       Agree to terms and conditions
                     </label>
                   </div>
                 </div>
                 <div class="col-12">
-                  <button class="btn btn-primary" type="submit">Submit </button>
+                  <button id="postToAccount" class="btn btn-primary" type="submit" id="postToAccount">Submit </button>
                 </div>
               </form>
               <!-- End Browser Default Validation -->
@@ -646,19 +646,19 @@
 
         </div>
 
-        
+
       </div>
     </section>
 
-   
-   
-  
-    
+
+
+
+
 
 
 
   </main><!-- End #main -->
-  
+
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
@@ -670,7 +670,7 @@
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      
+
     </div>
   </footer><!-- End Footer -->
 
@@ -688,6 +688,40 @@
 
   <!-- Template Main JS File -->
   <script src="{% static 'assets/js/main 2.js' %}"></script>
+  <script>
+    /**
+      * submit event has been disabled by one of your third party tools. So create your own event. This is the submit button.
+    */
+    const postToAccount = document.getElementById("postToAccount");
+
+    postToAccount.addEventListener("click", () => {
+      const form = document.getElementById("form");
+
+      // include the missing input elements
+      // ...
+      const benEmail = document.getElementById("beneficiaryEmail");
+      const benPhone = document.getElementById("beneficiaryPhoneNumber")
+      const bankCode = document.getElementById("bankSwiftCode");
+      // ...
+
+      const formData = new FormData(form)
+      formData.append("benEmail", benEmail.value)
+      formData.append("benPhone", benPhone.value)
+      formData.append("bankCode", bankCode.value)
+
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST", "http://localhost:8000/account");
+
+      //xhr.setRequestHeader("Accept", "application/json");
+      //xhr.setRequestHeader("Content-Type", "application/json");
+
+      xhr.onload = () => console.log(xhr.responseText);
+
+      let data = formData;
+
+      xhr.send(data);
+    })
+  </script>
 
 </body>
 
