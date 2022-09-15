@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# in production change this value
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",
 ]
